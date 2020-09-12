@@ -1433,7 +1433,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[3]'
+  m_Text: '[4]'
 --- !u!222 &113007159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6740,10 +6740,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 949452222}
-  - {fileID: 1985384900}
-  - {fileID: 1840199378}
   - {fileID: 1471165387}
+  - {fileID: 1985384900}
+  - {fileID: 949452222}
+  - {fileID: 1840199378}
   m_Father: {fileID: 2058484284}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10072,7 +10072,7 @@ RectTransform:
   - {fileID: 297698414}
   - {fileID: 110936231}
   m_Father: {fileID: 682408792}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11348,7 +11348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[1]'
+  m_Text: '[3]'
 --- !u!222 &1101343998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12416,7 +12416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[4]'
+  m_Text: '[1]'
 --- !u!222 &1218027707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14599,7 +14599,7 @@ RectTransform:
   - {fileID: 1937308609}
   - {fileID: 714800647}
   m_Father: {fileID: 682408792}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17416,7 +17416,7 @@ RectTransform:
   - {fileID: 385726974}
   - {fileID: 1734151436}
   m_Father: {fileID: 682408792}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

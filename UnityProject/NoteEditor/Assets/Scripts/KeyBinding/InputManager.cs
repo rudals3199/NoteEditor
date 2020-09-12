@@ -42,10 +42,11 @@ public class InputManager : MonoBehaviour {
         userButtons["Stop"] = KeyCode.Q;
         userButtons["Rewind"] = KeyCode.R;
 
-        userButtons["NextNote"] = KeyCode.Alpha1;
+        userButtons["PrevBeat"] = KeyCode.Alpha1;
         userButtons["PrevNote"] = KeyCode.Alpha2;
-        userButtons["NextBeat"] = KeyCode.Alpha3;
-        userButtons["PrevBeat"] = KeyCode.Alpha4;
+        userButtons["NextNote"] = KeyCode.Alpha3;
+        userButtons["NextBeat"] = KeyCode.Alpha4;
+        
 
 
         userButtons["Delete"] = KeyCode.E;

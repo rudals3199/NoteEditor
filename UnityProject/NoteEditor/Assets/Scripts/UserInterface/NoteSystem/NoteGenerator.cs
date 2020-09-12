@@ -166,7 +166,7 @@ public class NoteGenerator : MonoBehaviour {
         {
             if(0<= index && index < beatHolder.childCount)
             {
-                transform.position = new Vector3(snapDistanceX * index, transform.position.y);
+                transform.position = new Vector3(-snapDistanceX * index, transform.position.y);
                 return true;
             }
             else
@@ -176,7 +176,7 @@ public class NoteGenerator : MonoBehaviour {
         {
             if(0<= index && index < noteHolders[0].childCount)
             {
-                transform.position = new Vector3(snapDistanceX * index, transform.position.y);
+                transform.position = new Vector3(-snapDistanceX * index, transform.position.y);
                 return true;
             }
             else
