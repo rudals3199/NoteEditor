@@ -14,10 +14,11 @@ public class NoteSetting : MonoBehaviour
     public NoteGenerator noteGenerator;
 
 
-    public void InitializeSetting(float audioLength)
+    public void InitializeSetting(float paddingTime, float audioLength)
     {
         noteGenerator.GenerateBase(bpm, interval, beatPerBar, audioLength);
         scrollController.Initialize(bpm, interval);
+        scrollController.SetScrollPos(paddingTime);
     }
 
     public void SetBpm(string input_bpm)

@@ -22,7 +22,7 @@ public class SliderController : MonoBehaviour {
         timeSlider.minValue = minValue;
         timeSlider.maxValue = maxValue;
 
-        SetSliderValue(0);
+        SetSliderValue(minValue);
     }
 
     public void GetSliderValue(float value)

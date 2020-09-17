@@ -8,8 +8,9 @@ public class PlayManager : MonoBehaviour {
     bool isPlaying = false;
     bool audioLoaded = false;
 
-    float audioTime = 0;
+    float audioTime;
     float markedTime = 0;
+    float paddingTime = -3f;
     
 
     public Button playButton;
@@ -41,9 +42,11 @@ public class PlayManager : MonoBehaviour {
 
     private void Initialize(float audioLength)
     {
-        audioController.SetAudioTime(0, false);
-        sliderController.InitializeSlider(0, audioLength);
-        noteSetting.InitializeSetting(audioLength);
+        audioTime = paddingTime;
+        markedTime = paddingTime;
+        audioController.SetAudioTime(0f, false);
+        sliderController.InitializeSlider(paddingTime, audioLength);
+        noteSetting.InitializeSetting(paddingTime, audioLength);
         if(!audioLoaded)
         {
             playButton.onClick.AddListener(OnPlay);
@@ -66,12 +69,19 @@ public class PlayManager : MonoBehaviour {
     IEnumerator Playing()
     {
         while(isPlaying)
-        {
-            audioTime = audioController.Playing();
+        {    
+            if (audioTime < 0)
+                audioTime += Time.deltaTime;
+            else
+            {
+                if(!audioController.audioSource.isPlaying) audioController.SetPlaying(true);
+                audioTime = audioController.Playing();
+            }
+                
+
 
             scrollController.Scrolling(audioTime);
             sliderController.SetSliderValue(audioTime);
-
             yield return null;
         }
     }
@@ -81,7 +91,8 @@ public class PlayManager : MonoBehaviour {
     {
         isPlaying = true;
 
-        markedTime = audioController.SetPlaying(true);
+        if (audioTime < 0) markedTime = audioTime;
+        else               markedTime = audioController.SetPlaying(true);
         StartCoroutine(Playing());
     }
 
@@ -98,7 +109,7 @@ public class PlayManager : MonoBehaviour {
         StopAllCoroutines();
 
         isPlaying = false;
-        audioTime = 0;
+        audioTime = paddingTime;
 
         audioController.SetAudioTime(audioTime, isPlaying);
         scrollController.SetScrollPos(audioTime);
@@ -107,7 +118,9 @@ public class PlayManager : MonoBehaviour {
 
     void OnRewind()
     {
-        audioController.SetAudioTime(markedTime, isPlaying);
+        audioTime = markedTime;
+        if (markedTime < 0) audioController.SetAudioTime(0, false);
+        else                audioController.SetAudioTime(markedTime, isPlaying);
         scrollController.SetScrollPos(markedTime);
         sliderController.SetSliderValue(markedTime);
     }
@@ -119,7 +132,9 @@ public class PlayManager : MonoBehaviour {
 
     void OnSetTime(float sliderTime)
     {
-        audioController.SetAudioTime(sliderTime, isPlaying);
+        audioTime = sliderTime;
+        if (sliderTime < 0) audioController.SetAudioTime(0, false);
+        else                audioController.SetAudioTime(sliderTime, isPlaying);
         scrollController.SetScrollPos(sliderTime);
     }
 
